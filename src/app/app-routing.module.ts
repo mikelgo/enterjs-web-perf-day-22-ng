@@ -43,6 +43,13 @@ const routes: Routes = [
     pathMatch: 'full',
   },
   {
+    path: 'lcp',
+    loadComponent: () => import('./custom/lcp.component').then((m) => m.LcpComponent),
+  },  {
+    path: 'experiments',
+    loadComponent: () => import('./custom/experiments/experiments.component').then((m) => m.ExperimentsComponent),
+  },
+  {
     path: '**',
     loadChildren: () => {
       return import('./not-found-page/not-found-page.module').then(
